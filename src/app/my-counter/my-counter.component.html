@@ -1,0 +1,14 @@
+<button (click)="increment()">Increment</button>
+
+<div>Current Count: {{ count$ | async }}</div>
+
+<button (click)="decrement()">Decrement</button>
+
+<button (click)="reset()">Reset Counter</button>
+<div>
+  New Value:
+  <input type="number" [formControl]="newValueCtl" />
+  <button (click)="newValueClick()">Set Value</button>
+</div>
+
+<div><button (click)="loadValues()">Load Value</button></div>

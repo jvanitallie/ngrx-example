@@ -1,18 +1,27 @@
 <div class="row">
   <div class="col">
     Current Count: {{ count$ | async }}
-  <div>
+    <div></div>
+    <!-- 
+  TODO: 
+    Apply a basic bootstrap (v4) layout to the rest
+    Layout so that the Increment and Decrement buttons are on the left and the Reset Button is on the far right.
+    Layout the New Value textbox with the form caption above the textbox and the Set Value button is below it.
+    Use default Bootstrap classes for textboxes, buttons, etc. to make it look prettier.
+    
+    Fix the counter-facade.service and other state objects to enable the Reset, Set Value, and Load Value buttons to work. 
+  -->
+    <button (click)="increment()">Increment</button>
+
+    <button (click)="decrement()">Decrement</button>
+
+    <button (click)="reset()">Reset Counter</button>
+    <div>
+      New Value:
+      <input type="number" [formControl]="newValueCtl" />
+      <button (click)="newValueClick()">Set Value</button>
+    </div>
+
+    <div><button (click)="loadValues()">Load Value</button></div>
+  </div>
 </div>
-
-<button (click)="increment()">Increment</button>
-
-<button (click)="decrement()">Decrement</button>
-
-<button (click)="reset()">Reset Counter</button>
-<div>
-  New Value:
-  <input type="number" [formControl]="newValueCtl" />
-  <button (click)="newValueClick()">Set Value</button>
-</div>
-
-<div><button (click)="loadValues()">Load Value</button></div>

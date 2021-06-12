@@ -1,6 +1,10 @@
-<button (click)="increment()">Increment</button>
+<div class="row">
+  <div class="col">
+    Current Count: {{ count$ | async }}
+  <div>
+</div>
 
-<div>Current Count: {{ count$ | async }}</div>
+<button (click)="increment()">Increment</button>
 
 <button (click)="decrement()">Decrement</button>
 

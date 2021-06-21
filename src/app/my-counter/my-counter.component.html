@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col">
-    Current Count: {{ count$ | async }}
-    <div></div>
+    <div class="myCounterResult">
+      Count:<br/> {{ count$ | async }}
+    </div>
+
     <!-- 
   TODO: 
     Apply a basic bootstrap (v4) layout to the rest
@@ -11,17 +13,18 @@
     
     Fix the counter-facade.service and other state objects to enable the Reset, Set Value, and Load Value buttons to work. 
   -->
-    <button (click)="increment()">Increment</button>
+    <button class="btn btn-primary m-2" (click)="increment()">Increment</button>
 
-    <button (click)="decrement()">Decrement</button>
+    <button class="btn btn-primary m-2" (click)="decrement()">Decrement</button>
 
-    <button (click)="reset()">Reset Counter</button>
-    <div>
-      New Value:
-      <input type="number" [formControl]="newValueCtl" />
-      <button (click)="newValueClick()">Set Value</button>
+    <button  class="btn btn-danger m-2 float-right" (click)="reset()">Reset Counter</button>
+    <div class="form-group mt-3">
+      <label for="newValueCtl" class="control-label font-weight-bold">New Value:</label>
+      <input id="newValueCtl" name="newValueCtl" class="form-control" type="number" [formControl]="newValueCtl" />
+      <button class="btn btn-primary m-2" (click)="newValueClick()">Set Value</button>
+      <button class="btn btn-primary m-2" (click)="loadValues()">Load Value</button>
     </div>
-
-    <div><button (click)="loadValues()">Load Value</button></div>
+    
+    <div></div>
   </div>
 </div>

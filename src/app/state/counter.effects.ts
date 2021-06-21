@@ -9,7 +9,21 @@ export class CounterEffects {
   constructor(
     private actions$: Actions,
     private counterService: CounterService
-  ) {
-    // TODO: Create the effect for loading the data from the service
-  }
+  ) {}
+
+  // TODO: Create the effect for loading the data from the service
+  loadEffect$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(counterActions.loadvalue),
+      mergeMap(action =>
+        this.counterService
+          .loadCounter()
+          .pipe(
+            map((newVal: number) =>
+              counterActions.setvalue({ newValue: newVal })
+            )
+          )
+      )
+    )
+  );
 }

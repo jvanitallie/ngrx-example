@@ -1,8 +1,20 @@
 <div class="row">
   <div class="col">
-    <div class="myCounterResult">
-      Count:<br/> {{ count$ | async }}
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary my-btn a1" (click)="decrement()">-</button>
+      </div>
+      <div class="col">
+        <counter-badge [count]="count$ | async"></counter-badge>
+      </div>
+      <div class="col">
+        <button class="btn btn-primary my-btn a2" (click)="increment()">+</button>
+      </div>
     </div>
+
+
+
+
 
     <!-- 
   TODO: 
@@ -13,18 +25,19 @@
     
     Fix the counter-facade.service and other state objects to enable the Reset, Set Value, and Load Value buttons to work. 
   -->
-    <button class="btn btn-primary m-2" (click)="increment()">Increment</button>
 
-    <button class="btn btn-primary m-2" (click)="decrement()">Decrement</button>
+    <div class="row">
+      <div class="col">
+        <div class="form-group mt-3">
+          <label for="newValueCtl" class="control-label font-weight-bold">New Value:</label>
+          <input id="newValueCtl" name="newValueCtl" class="form-control" type="number" [formControl]="newValueCtl" />
+          <button class="btn btn-primary m-2" (click)="newValueClick()">Set Value</button>
+          <button class="btn btn-primary m-2" (click)="loadValues()">Load Value</button>
+          <button  class="btn btn-danger m-2 float-right" (click)="reset()">Reset Counter</button>
+        </div>
 
-    <button  class="btn btn-danger m-2 float-right" (click)="reset()">Reset Counter</button>
-    <div class="form-group mt-3">
-      <label for="newValueCtl" class="control-label font-weight-bold">New Value:</label>
-      <input id="newValueCtl" name="newValueCtl" class="form-control" type="number" [formControl]="newValueCtl" />
-      <button class="btn btn-primary m-2" (click)="newValueClick()">Set Value</button>
-      <button class="btn btn-primary m-2" (click)="loadValues()">Load Value</button>
+        <div></div>
+      </div>
     </div>
-    
-    <div></div>
   </div>
 </div>

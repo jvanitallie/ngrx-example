@@ -1,27 +1,42 @@
 <div class="row">
   <div class="col">
-    Current Count: {{ count$ | async }}
-    <div></div>
     <!-- 
   TODO: 
     Apply a basic bootstrap (v4) layout to the rest
     Layout so that the Increment and Decrement buttons are on the left and the Reset Button is on the far right.
     Layout the New Value textbox with the form caption above the textbox and the Set Value button is below it.
     Use default Bootstrap classes for textboxes, buttons, etc. to make it look prettier.
+    Use the picture in this folder for a guide (doesn't have to be exactly like that).
     
     Fix the counter-facade.service and other state objects to enable the Reset, Set Value, and Load Value buttons to work. 
   -->
-    <button (click)="increment()">Increment</button>
 
-    <button (click)="decrement()">Decrement</button>
+    <div style="display: flex; justify-content: space-around">
+      <button style="background-color: black; color: white; border-radius: 5px; height: 75%" (click)="increment()">-</button>
 
-    <button (click)="reset()">Reset Counter</button>
-    <div>
-      New Value:
-      <input type="number" [formControl]="newValueCtl" />
-      <button (click)="newValueClick()">Set Value</button>
+      <div style="background-color: purple; color: white; width: 20%; height: 75px; border: 1px solid black; text-align: center; border-radius: 5px; padding-top: 12.5px"> 
+        Count: 
+        <br>
+        {{ count$ | async }} 
+      </div>
+
+      <button style="background-color: black; color: white; border-radius: 5px; height: 75%" (click)="decrement()">+</button>
     </div>
 
-    <div><button (click)="loadValues()">Load Value</button></div>
+    <br>
+
+    <div>
+      <strong>New Value:</strong>
+      <br>
+      <input class="form-control" type="number" [formControl]="newValueCtl" />
+      <br>      
+      <div>
+        <div style="display: flex; justify-content: space-between">
+          <button class="btn btn-primary" (click)="newValueClick()">Set Value</button>
+          <button class="btn btn-primary" (click)="loadValues()">Load Value</button>
+          <button class="btn btn-danger" (click)="reset()">Reset Counter</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

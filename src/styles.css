@@ -3,7 +3,16 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
+.center-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.counter-buttons {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
 /*
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://github.com/ngrx/platform

@@ -8,6 +8,7 @@ enum CounterActionTypes {
   LOADVALUE = "[Counter API] Load Value"
 }
 
+// All the actions are defined - you shouldn't need to adjust these:
 export const increment = createAction(CounterActionTypes.INCREMENT);
 export const decrement = createAction(CounterActionTypes.DECREMENT);
 export const reset = createAction(CounterActionTypes.RESET);

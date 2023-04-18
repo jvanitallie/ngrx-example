@@ -11,17 +11,17 @@
     
     Fix the counter-facade.service and other state objects to enable the Reset, Set Value, and Load Value buttons to work. 
   -->
-    <button (click)="increment()">Increment</button>
+    <button class="btn btn-primary m-2" (click)="increment()">Increment</button>
 
-    <button (click)="decrement()">Decrement</button>
+    <button class="btn btn-warning m-2" (click)="decrement()">Decrement</button>
 
-    <button (click)="reset()">Reset Counter</button>
+    <button class="btn btn-danger m-2" (click)="reset()">Reset Counter</button>
     <div>
       New Value:
-      <input type="number" [formControl]="newValueCtl" />
-      <button (click)="newValueClick()">Set Value</button>
+      <input class="" type="number" [formControl]="newValueCtl" />
+      <button class="btn btn-warning lg m-2" (click)="newValueClick()">Set Value</button>
     </div>
 
-    <div><button (click)="loadValues()">Load Value</button></div>
+    <div><button class="btn btn-warning sm m-1" (click)="loadValues()">Load Value</button></div>
   </div>
 </div>

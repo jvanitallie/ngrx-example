@@ -7,6 +7,7 @@ import { CounterState } from './counter.reducer';
 
 @Injectable()
 export class CounterFacadeService {
+  
   constructor(private store: Store<CounterState>) {}
 
   public getCount(): Observable<number> {
@@ -23,13 +24,16 @@ export class CounterFacadeService {
 
   public resetCount(): void {
     // TODO: Wire this up to use ngRx to reset the state to the initial state
+    this.store.dispatch(counterActions.reset())
   }
 
   public setValue(val: number): void {
     // TODO: Wire this up to pass the value passed in to the state for the current counter value
+    this.store.dispatch(counterActions.setvalue({newValue:val}))
   }
 
   public loadValue(): void {
     // TODO: Wire this up so that the current counter value is loaded from the counter service
+    //this.store.dispatch(counterActions.loadvalue())
   }
 }

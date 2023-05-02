@@ -13,4 +13,4 @@ export const increment = createAction(CounterActionTypes.INCREMENT);
 export const decrement = createAction(CounterActionTypes.DECREMENT);
 export const reset = createAction(CounterActionTypes.RESET);
 export const setvalue = createAction(CounterActionTypes.SETVALUE, props<{newValue: number}>());
-export const loadvalue = createAction(CounterActionTypes.LOADVALUE);
+export const loadvalue = createAction(CounterActionTypes.LOADVALUE,props<{load:number}>());
